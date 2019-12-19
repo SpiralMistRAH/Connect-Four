@@ -1,0 +1,238 @@
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+import java.io.*;
+public class ProjectTester {
+	public static boolean horizontalR(String[][] board) {
+		boolean end = false;
+		for(int i = 0; i<6;i++) {//Checks left horizontal victory
+			for(int j = 0; j<4;j++) {
+				if(board[i][j]!="| |"
+						&&board[i][j+1]!="| |"
+						&&board[i][j+2]!="| |"
+						&&board[i][j+3]!="| |"
+						&&board[i][j]==board[i][j+1]
+						&&board[i][j+1]==board[i][j+2]
+						&&board[i][j+3]==board[i][j+2]) {
+					if(board[i][j]=="|R|") {
+						end = true;
+						
+					}else {
+						end = false;
+					
+					}
+				}
+			}
+		}return end;
+	}public static boolean horizontalY(String[][] board) {
+		boolean end = false;
+		for(int i = 0; i<6;i++) {//Checks left horizontal victory
+			for(int j = 0; j<4;j++) {
+				if(board[i][j]!="| |"
+						&&board[i][j+1]!="| |"
+						&&board[i][j+2]!="| |"
+						&&board[i][j+3]!="| |"
+						&&board[i][j]==board[i][j+1]
+						&&board[i][j+1]==board[i][j+2]
+						&&board[i][j+3]==board[i][j+2]) {
+					if(board[i][j]=="|Y|") {
+						end = true;
+						
+					}else {
+						end = false;
+					
+					}
+	}
+			}
+		}return end;
+	}public static boolean verticalR(String[][] board) {
+		boolean end = false;
+		
+	for(int i = 0; i<3;i++) {
+		for(int j = 0; j<7;j++) {
+			if(board[i][j]!="| |"&&board[i+1][j]!="| |"
+					&&board[i+2][j]!="| |"
+					&&board[i+3][j]!="| |"&&board[i+1][j]==board[i][j]&&board[i+1][j]==board[i+2][j]&&board[i+3][j]==board[i+2][j]) {
+					
+					if(board[i][j]=="|R|") {
+						end = true;
+					}else {
+						end = false;
+	
+					}
+			}
+		}
+	}return end;
+	}public static boolean verticalY(String[][] board) {
+		boolean end = false;
+		for(int i = 0; i<3;i++) {
+			for(int j = 0; j<7;j++) {
+				if(board[i][j]!="| |"&&board[i+1][j]!="| |"
+						&&board[i+2][j]!="| |"
+						&&board[i+3][j]!="| |"&&board[i+1][j]==board[i][j]&&board[i+1][j]==board[i+2][j]&&board[i+3][j]==board[i+2][j]) {
+						
+						if(board[i][j]=="|Y|") {
+							end = true;
+						}else {
+							end = false;
+		
+						}
+				}
+			}
+		}return end;
+	}public static boolean diagUpR(String[][] board) {
+		boolean end = false;
+		for(int i = 0; i<3;i++) {
+			for(int j = 3; j<7;j++) {
+				if(board[i][j]!="| |"
+						&&board[i+1][j-1]!="| |"
+						&&board[i+2][j-2]!="| |"
+						&&board[i+3][j-3]!="| |"
+						&&(board[i][j]==board[i+1][j-1])
+						&&(board[i+1][j-1]==board[i+2][j-2])
+						&&(board[i+2][j-2]==board[i+3][j-3])) {
+					
+					if(board[i][j]=="|R|") {
+						end =true;
+						
+					}else {
+						end = false;
+						
+					}
+				}
+			}
+		}return end;
+	}public static boolean diagUpY(String[][] board) {
+		boolean end = false;
+		for(int i = 0; i<3;i++) {
+			for(int j = 3; j<7;j++) {
+				if(board[i][j]!="| |"&&
+					board[i+1][j-1]!="| |"
+						&&board[i+2][j-2]!="| |"
+						&&board[i+3][j-3]!="| |"
+						&&
+						(board[i][j]==board[i+1][j-1])&&(board[i+1][j-1]==board[i+2][j-2])&&(board[i+2][j-2]==board[i+3][j-3])) {
+					
+					if(board[i][j]=="|Y|") {
+						end =true;
+						
+					}else {
+						end = false;
+						
+					}
+				}
+			}
+		}return end;
+	}public static boolean diagDownR(String[][] board) {
+		boolean end = false;
+		for(int i = 0; i<3;i++) {
+			for(int j = 0; j<4;j++) {
+				if(board[i][j]!="| |"
+						&&board[i+1][j+1]!= "| |"
+						&&board[i+2][i+2]!="| |"
+						&&board[i+3][j+3]!="| |"
+						&&(board[i][j]==board[i+1][j+1])&&(board[i+1][j+1]==board[i+2][j+2])&&(board[i+2][j+2]==board[i+3][j+3])) {
+					
+					if(board[i][j]=="|R|") {
+						end =true;
+						
+					}else {
+						end = false;
+						
+					}
+				}
+			}
+		}return end;
+	}public static boolean diagDownY(String[][] board) {
+		boolean end = false;
+		for(int i = 0; i<3;i++) {
+			for(int j = 0; j<4;j++) {
+				if(board[i][j]!="| |"&&
+						board[i+1][j+1]!= "| |"
+						&&board[i+2][i+2]!="| |"
+						&&board[i+3][j+3]!="| |"
+						
+						&&(board[i][j]==board[i+1][j+1])&&(board[i+1][j+1]==board[i+2][j+2])&&(board[i+2][j+2]==board[i+3][j+3])) {
+					
+					if(board[i][j]=="|Y|") {
+						end =true;
+						
+					}else {
+						end = false;
+						
+					}
+				}
+			}
+		}return end;
+	}
+	public static void main(String[] args) {
+		String[][] board = new String[6][7];// 6 is the row and 7 is the column
+		boolean end = false;
+		int p1 = 1;
+		// i is the row and j is the column
+		for(int i = 0; i<6;i++) {
+			for(int j = 0; j<7;j++) {
+				board[i][j] = "| |";
+				System.out.print(board[i][j]);
+			}System.out.println();
+		}
+		Scanner x = new Scanner(System.in);
+		System.out.println("Enter a location to insert a piece");
+		int[] heightCount = new int[7];
+		for(int i = 0; i<7;i++) {
+			heightCount[i] = 5;
+		}
+		while(end == false) {
+			try {
+				int tempCol = x.nextInt();
+			if(p1%2 ==1) {
+				board[heightCount[tempCol]][tempCol] = "|R|";
+				heightCount[tempCol] -= 1;
+				p1++;
+			}else {
+				board[heightCount[tempCol]][tempCol] = "|Y|";
+				heightCount[tempCol] -= 1;
+				p1++;
+			}
+			if(heightCount[tempCol] <= -1) {
+				System.out.println("The column is now full");
+			}
+			for(int i = 0; i<6;i++) {
+				for(int j = 0; j<7;j++) {
+					System.out.print(board[i][j]);
+				}System.out.println();
+			}if(horizontalR(board)) {
+				System.out.println("Red is the winner");
+				end = true;
+			}else if(horizontalY(board)) {
+				System.out.println("Yellow is the winner");
+				end = true;
+			}else if(verticalR(board)) {
+				System.out.println("Red is the winner");
+				end = true;
+			}else if(verticalY(board)) {
+				System.out.println("Yellow is the winner");
+				end = true;
+			}else if(diagUpR(board)) {
+				System.out.println("Red is the winner");
+				end = true;
+			}else if(diagDownR(board)) {
+				System.out.println("Red is the winner");
+				end = true;
+			}else if(diagUpY(board)) {
+				System.out.println("Yellow is the winner");
+				end = true;
+			}else if(diagDownY(board)) {
+				System.out.println("Yellow is the winner");
+				end = true;
+			}
+			}catch(InputMismatchException e) {
+				System.out.println("Input mismatch");
+				x.next();
+			}catch(IndexOutOfBoundsException e) {
+				System.out.println("Index out of Bounds");
+			}catch(Exception e) {
+				System.out.println("Exception");
+			}
+	}
+}}
